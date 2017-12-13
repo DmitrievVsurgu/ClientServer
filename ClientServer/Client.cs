@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientServer
 {
-    class Program
+    class Client
     {
         static void Main(string[] args)
         {

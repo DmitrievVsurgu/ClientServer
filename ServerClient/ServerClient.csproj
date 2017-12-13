@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3736044A-D1C5-42A1-AD49-FBCF06736047}</ProjectGuid>
+    <ProjectGuid>{505E2149-AD08-46D3-9F8E-238492567FFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClientServer</RootNamespace>
-    <AssemblyName>ClientServer</AssemblyName>
+    <RootNamespace>ServerClient</RootNamespace>
+    <AssemblyName>ServerClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
