@@ -15,11 +15,9 @@ namespace ServerClient
             if (args == null || args.Length < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine("Usage: ./{0} HWServer [Name]", AppDomain.CurrentDomain.FriendlyName);
+                Console.WriteLine(" This is a server for our chat ()");
                 Console.WriteLine();
-                Console.WriteLine("    Name   Your name. Default: World");
-                Console.WriteLine();
-                args = new string[] { "World" };
+                args = new string[] { "" };
             }
 
             string name = args[0];
@@ -29,7 +27,7 @@ namespace ServerClient
             using (var responder = new ZSocket(context, ZSocketType.REP))
             {
                 // Bind
-                responder.Bind("tcp://*:5555");
+                responder.Bind("tcp://*:5570");
 
                 while (true)
                 {

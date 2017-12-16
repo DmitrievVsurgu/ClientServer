@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using ZeroMQ;
 
 namespace ClientServer
@@ -14,15 +14,16 @@ namespace ClientServer
             if (args == null || args.Length < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine("Usage: ./{0} HWClient [Endpoint]", AppDomain.CurrentDomain.FriendlyName);
+                Console.WriteLine(" Welcome to our chat ()");
                 Console.WriteLine();
-                Console.WriteLine("    Endpoint  Where HWClient should connect to.");
-                Console.WriteLine("              Default is tcp://127.0.0.1:5555");
-                Console.WriteLine();
-                args = new string[] { "tcp://127.0.0.1:5555" };
+                args = new string[] { "tcp://127.0.0.1:5570" };
             }
 
             string endpoint = args[0];
+
+            string UserName;
+            Console.Write("Enter your name");
+            UserName = Console.ReadLine();
 
             // Create
             using (var context = new ZContext())
@@ -33,8 +34,11 @@ namespace ClientServer
 
                 for (int n = 0; n < 10; ++n)
                 {
-                    string requestText = "Hello";
-                    Console.Write("Sending {0}…", requestText);
+                    string requestText;
+                    Console.Write("Enter your message: ");
+                    requestText = Console.ReadLine();
+                    Console.WriteLine();
+                    Console.Write("Sending {0}: {1}...", UserName, requestText);
 
                     // Send
                     requester.Send(new ZFrame(requestText));
