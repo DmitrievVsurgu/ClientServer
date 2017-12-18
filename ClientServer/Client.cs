@@ -14,15 +14,15 @@ namespace ClientServer
             if (args == null || args.Length < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine(" Welcome to our chat ()");
+                Console.WriteLine(" Welcome to our chat (Vi_Mrch)");
                 Console.WriteLine();
-                args = new string[] { "tcp://127.0.0.1:5570" };
+                args = new string[] { "tcp://127.0.0.1:5555" };
             }
 
             string endpoint = args[0];
 
             string UserName;
-            Console.Write("Enter your name");
+            Console.Write("Enter your name: ");
             UserName = Console.ReadLine();
 
             // Create
@@ -32,13 +32,13 @@ namespace ClientServer
                 // Connect
                 requester.Connect(endpoint);
 
-                for (int n = 0; n < 10; ++n)
+                for (int n = 0; n < 50; ++n)
                 {
                     string requestText;
                     Console.Write("Enter your message: ");
                     requestText = Console.ReadLine();
                     Console.WriteLine();
-                    Console.Write("Sending {0}: {1}...", UserName, requestText);
+                    Console.WriteLine("Sending {0}: {1}...", UserName, requestText);
 
                     // Send
                     requester.Send(new ZFrame(requestText));

@@ -15,7 +15,7 @@ namespace ServerClient
             if (args == null || args.Length < 1)
             {
                 Console.WriteLine();
-                Console.WriteLine(" This is a server for our chat ()");
+                Console.WriteLine(" This is a server for our chat (Vi_Mrch)");
                 Console.WriteLine();
                 args = new string[] { "" };
             }
@@ -27,7 +27,7 @@ namespace ServerClient
             using (var responder = new ZSocket(context, ZSocketType.REP))
             {
                 // Bind
-                responder.Bind("tcp://*:5570");
+                responder.Bind("tcp://*:5555");
 
                 while (true)
                 {
